@@ -1,0 +1,102 @@
+/* detalle.css — estilos exclusivos de la página de detalle */
+
+/* ── Migas de pan ── */
+.migas {
+  font-size: 12px;
+  color: var(--suave);
+  margin-bottom: 14px;
+}
+.migas a { color: var(--acento); }
+.migas a:hover { text-decoration: underline; }
+.migas span { margin: 0 4px; }
+
+/* ── Bloque de detalle ── */
+.detalle {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detalle__poster {
+  width: 120px;
+  flex-shrink: 0;
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: #f3f4f6;
+  align-self: flex-start;
+}
+.detalle__poster img { width: 100%; display: block; }
+.detalle__sin-imagen {
+  aspect-ratio: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.detalle__titulo {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.detalle__generos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.detalle__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 13px;
+  color: var(--suave);
+  margin-bottom: 8px;
+}
+.detalle__datos strong { color: var(--texto); }
+.detalle__calificacion {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b45309;
+  margin-bottom: 10px;
+}
+.detalle__resumen {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #374151;
+  margin-bottom: 14px;
+}
+.detalle__resumen p { margin-bottom: 8px; }
+.detalle__acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ── Esqueleto del detalle ── */
+.detalle-esqueleto {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.esq-caja { border-radius: var(--radio); }
+.esq-linea { height: 12px; border-radius: 4px; }
+.esq-linea--grande { height: 20px; width: 60%; }
+.esq-linea--mediana { width: 42%; }
+.esq-linea--pequena { width: 28%; }
+
+/* ── Tableta ≥ 600px ── */
+@media (min-width: 600px) {
+  .detalle { flex-direction: row; gap: 20px; }
+  .detalle__poster { width: 160px; }
+  .detalle__info { flex: 1; min-width: 0; }
+  .detalle-esqueleto { flex-direction: row; }
+}
+@media (min-width: 900px)  { .detalle__poster { width: 190px; } .detalle__titulo { font-size: 22px; } }
+@media (min-width: 1200px) { .detalle__poster { width: 220px; } }

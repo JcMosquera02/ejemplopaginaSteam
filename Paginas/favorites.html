@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favoritos — ProyectoSteam</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/favoritos.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">ProyectoSteam</a>
+    <button class="nav__boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__menu" id="menu-nav" role="menu">
+      <li><a href="index.html" class="nav__enlace">Inicio</a></li>
+      <li><a href="favorites.html" class="nav__enlace activo">Favoritos</a></li>
+    </ul>
+  </nav>
+
+  <main class="pagina">
+
+    <div class="encabezado-pagina">
+      <h1 class="titulo-pagina">Mis favoritos (<span id="contador-favoritos">0</span>)</h1>
+      <button class="btn btn--peligro" id="btn-eliminar-todo" hidden>Eliminar todos</button>
+    </div>
+
+    <div class="barra-favoritos">
+      <input type="search" id="buscar-favoritos" class="campo" placeholder="Buscar en favoritos…" style="max-width:280px" />
+      <div class="barra-favoritos__ordenar">
+        Ordenar:
+        <button class="btn-orden activo" data-orden="agregado">Recientes</button>
+        <button class="btn-orden" data-orden="nombre">Nombre</button>
+        <button class="btn-orden" data-orden="calificacion">Calificación</button>
+      </div>
+    </div>
+
+    <div class="vacio" id="lista-vacia" hidden>
+      <strong>Tu lista está vacía</strong>
+      Agrega series desde la página de inicio.
+      <a href="index.html" class="btn btn--primario">Explorar series</a>
+    </div>
+
+    <div class="vacio" id="sin-coincidencias" hidden>
+      <strong>Sin coincidencias</strong>
+      No hay favoritos que coincidan con tu búsqueda.
+    </div>
+
+    <ul class="lista-favoritos" id="lista-favoritos"></ul>
+
+  </main>
+
+  <footer class="pie">
+    Datos de <a href="https://www.tvmaze.com" target="_blank" rel="noopener">TVMaze API</a>
+  </footer>
+
+  <script type="module" src="../js/favorites-main.js"></script>
+</body>
+</html>

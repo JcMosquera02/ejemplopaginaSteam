@@ -1,0 +1,91 @@
+/* favoritos.css — estilos exclusivos de la página de favoritos */
+
+/* ── Encabezado de página ── */
+.encabezado-pagina {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.titulo-pagina { font-size: 17px; font-weight: 600; }
+
+/* ── Barra de herramientas ── */
+.barra-favoritos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.barra-favoritos__ordenar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--suave);
+  flex-wrap: wrap;
+}
+.btn-orden {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  color: var(--suave);
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-orden:hover  { border-color: var(--acento); color: var(--acento); }
+.btn-orden.activo { background: var(--acento); border-color: var(--acento); color: #fff; }
+
+/* ── Lista de favoritos ── */
+.lista-favoritos { display: flex; flex-direction: column; gap: 8px; }
+
+.item-favorito {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.item-favorito__miniatura {
+  width: 46px;
+  height: 66px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+.item-favorito__miniatura img { width: 100%; height: 100%; object-fit: cover; }
+.item-favorito__sin-imagen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #9ca3af;
+}
+.item-favorito__info { flex: 1; min-width: 0; }
+.item-favorito__titulo {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.item-favorito__generos { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 6px; }
+.item-favorito__acciones { display: flex; gap: 6px; flex-wrap: wrap; }
+.item-favorito__acciones .btn { padding: 5px 10px; font-size: 12px; }
+
+/* ── Tableta ≥ 600px ── */
+@media (min-width: 600px) {
+  .barra-favoritos { flex-direction: row; align-items: center; }
+  .lista-favoritos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+@media (min-width: 900px)  { .lista-favoritos { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .lista-favoritos { grid-template-columns: repeat(4, 1fr); } }

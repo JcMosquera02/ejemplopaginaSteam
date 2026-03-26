@@ -1,0 +1,217 @@
+/* inicio.css — estilos exclusivos de la página principal */
+
+/* ── Barra de búsqueda ── */
+.barra-busqueda {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.barra-busqueda__fila-superior {
+  display: flex;
+  gap: 8px;
+}
+.barra-busqueda__fila-superior .campo { flex: 1; }
+
+.barra-busqueda__fila-inferior {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.barra-busqueda__fila-inferior label {
+  font-size: 12px;
+  color: var(--suave);
+  white-space: nowrap;
+}
+.barra-busqueda__fila-inferior .selector {
+  flex: 1;
+  min-width: 120px;
+  max-width: 220px;
+}
+
+/* ── Historial de búsquedas ── */
+.historial {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+.historial__titulo {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--suave);
+  margin-bottom: 5px;
+}
+.historial__etiquetas { display: flex; flex-wrap: wrap; gap: 5px; }
+.historial__etiqueta {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--suave);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+}
+.historial__etiqueta:hover { color: var(--acento); border-color: var(--acento); }
+
+/* ── Barra de información ── */
+.barra-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--suave);
+}
+.barra-info__por-pagina { display: flex; align-items: center; gap: 6px; }
+.barra-info__por-pagina .selector { padding: 4px 8px; font-size: 12px; }
+
+/* ── Cuadrícula de tarjetas — móvil primero: 2 columnas ── */
+.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+@media (min-width: 600px)  { .cuadricula { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
+@media (min-width: 900px)  { .cuadricula { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1200px) { .cuadricula { grid-template-columns: repeat(5, 1fr); } }
+
+/* ── Tarjeta ── */
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tarjeta__imagen {
+  aspect-ratio: 2/3;
+  background: #f3f4f6;
+  overflow: hidden;
+}
+.tarjeta__imagen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tarjeta__sin-imagen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 11px;
+}
+.tarjeta__cuerpo {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.tarjeta__titulo {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tarjeta__generos { display: flex; flex-wrap: wrap; gap: 3px; }
+.tarjeta__calificacion { font-size: 11px; color: #b45309; font-weight: 500; }
+.tarjeta__acciones {
+  display: flex;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.tarjeta__acciones .btn {
+  flex: 1;
+  justify-content: center;
+  padding: 5px 4px;
+  font-size: 11px;
+}
+
+/* ── Esqueleto de carga — mismas columnas que la cuadrícula ── */
+.cuadricula-esqueleto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+@media (min-width: 600px)  { .cuadricula-esqueleto { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
+@media (min-width: 900px)  { .cuadricula-esqueleto { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1200px) { .cuadricula-esqueleto { grid-template-columns: repeat(5, 1fr); } }
+
+.tarjeta-esqueleto {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.tarjeta-esqueleto__imagen { aspect-ratio: 2/3; }
+.tarjeta-esqueleto__cuerpo { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.tarjeta-esqueleto__linea  { height: 11px; border-radius: 4px; }
+.tarjeta-esqueleto__linea--corta { width: 55%; }
+
+/* ── Paginación ── */
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+.btn-pagina {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: var(--radio);
+  font-size: 13px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-pagina:hover:not(:disabled) { border-color: var(--acento); color: var(--acento); }
+.btn-pagina.activo { background: var(--acento); border-color: var(--acento); color: #fff; }
+.btn-pagina:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ── Puntos de elipsis en paginación ── */
+.pagina-puntos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 32px;
+  color: var(--suave);
+  font-size: 13px;
+  padding: 0 2px;
+}
+
+/* ── Botones de navegación extrema (<< >>) ── */
+.btn-pagina--nav {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 36px;
+  color: var(--suave);
+}
+.btn-pagina--nav:hover:not(:disabled) {
+  color: var(--acento);
+  border-color: var(--acento);
+}

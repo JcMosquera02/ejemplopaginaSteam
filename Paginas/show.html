@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle — ProyectoSteam</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/detalle.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">ProyectoSteam</a>
+    <button class="nav__boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__menu" id="menu-nav" role="menu">
+      <li><a href="index.html" class="nav__enlace">Inicio</a></li>
+      <li><a href="favorites.html" class="nav__enlace">Favoritos</a></li>
+    </ul>
+  </nav>
+
+  <main class="pagina">
+    <p class="migas">
+      <a href="index.html">Inicio</a>
+      <span>›</span>
+      <span id="miga-nombre">Cargando…</span>
+    </p>
+    <!-- El JS inyecta aquí el esqueleto o el detalle -->
+    <div id="area-contenido"></div>
+  </main>
+
+  <footer class="pie">
+    Datos de <a href="https://www.tvmaze.com" target="_blank" rel="noopener">TVMaze API</a>
+  </footer>
+
+  <script type="module" src="../js/show-main.js"></script>
+</body>
+</html>

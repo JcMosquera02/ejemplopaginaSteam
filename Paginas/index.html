@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProyectoSteam</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/inicio.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">ProyectoSteam</a>
+    <button class="nav__boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__menu" id="menu-nav" role="menu">
+      <li><a href="index.html" class="nav__enlace activo">Inicio</a></li>
+      <li><a href="favorites.html" class="nav__enlace">Favoritos</a></li>
+    </ul>
+  </nav>
+
+  <main class="pagina">
+
+    <!-- Buscador -->
+    <div class="barra-busqueda">
+      <div class="barra-busqueda__fila-superior">
+        <input type="search" id="campo-busqueda" class="campo" placeholder="Buscar serie o película…" autocomplete="off" />
+        <button id="btn-limpiar" class="btn btn--contorno" hidden>Limpiar</button>
+      </div>
+      <div class="barra-busqueda__fila-inferior">
+        <label for="selector-categoria">Categoría:</label>
+        <select id="selector-categoria" class="selector">
+          <option value="all">Todas</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Historial -->
+    <div id="historial-contenedor" hidden>
+      <div class="historial">
+        <p class="historial__titulo">Búsquedas recientes</p>
+        <ul class="historial__etiquetas" id="historial-lista"></ul>
+      </div>
+    </div>
+
+    <!-- Barra de información -->
+    <div class="barra-info">
+      <span id="contador-resultados"></span>
+      <div class="barra-info__por-pagina">
+        Mostrar
+        <select id="selector-por-pagina" class="selector">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+        por página
+      </div>
+    </div>
+
+    <!-- Área de contenido: el JS inyecta aquí el esqueleto o la cuadrícula -->
+    <div id="area-contenido"></div>
+
+    <!-- Sin resultados -->
+    <div class="vacio" id="sin-resultados" hidden>
+      <strong>Sin resultados</strong>
+      Intenta con otro término o categoría.
+    </div>
+
+    <!-- Paginación -->
+    <div class="paginacion" id="contenedor-paginacion">
+      <button class="btn-pagina btn-pagina--nav" id="btn-primera"  disabled title="Primera página">&#171;</button>
+      <button class="btn-pagina btn-pagina--nav" id="btn-anterior" disabled title="Página anterior">&#8249;</button>
+      <div id="numeros-pagina"></div>
+      <button class="btn-pagina btn-pagina--nav" id="btn-siguiente" title="Página siguiente">&#8250;</button>
+      <button class="btn-pagina btn-pagina--nav" id="btn-ultima"    title="Última página">&#187;</button>
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    Datos de <a href="https://www.tvmaze.com" target="_blank" rel="noopener">TVMaze API</a>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
